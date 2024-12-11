@@ -1,0 +1,90 @@
+.app-header {
+  padding: 20px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .head-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .title {
+      font-size: 2rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .user-select {
+      // background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      img{
+        width: 50px;
+        height: 50px;
+      }
+      span{
+        color: white;
+        font-size: 1.5rem;
+      }
+      svg{
+        fill: white;
+        font-size: 2rem;
+      }
+      .user-options{
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 90;
+        box-shadow: 0 0 10px 0 black;
+        width: 100%;
+        option{
+          padding: 10px 5px;
+        }
+        .active{
+          font-weight: 700;
+          background-color: #dddddd;
+          color: #141414;
+        }
+      }
+    }
+  }
+
+  .header-btns {
+    background-color: rgb(70, 81, 113);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+
+    .btn {
+      padding: 3px 15px;
+      border-radius: 10px;
+      background-color: #fff;
+      color: rgb(69, 68, 68);
+      font-weight: 600;
+
+      &.type {
+        background-color: rgb(216, 164, 182);
+      }
+      &.data {
+        background-color: rgb(156, 198, 248);
+      }
+      &.done {
+        background-color: rgb(126, 212, 148);
+      }
+      &.active {
+        color: white;
+      }
+    }
+  }
+}
