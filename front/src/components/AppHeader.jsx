@@ -29,37 +29,34 @@ export default function AppHeader({ user, sort, setSort, setUser }) {
                             <MdExpandLess onClick={() => setOnSelect(false)} />
                             <div className="user-options">
 
-                                <option
+                                <span
                                     className={user === 'Для всех' ? 'active' : ""}
-                                    value="Для всех"
                                     onClick={() => {
                                         setUser("Для всех");
                                         setOnSelect(false);
                                     }}
                                 >
                                     Для всех
-                                </option>
+                                </span>
 
-                                <option
+                                <span
                                     className={user === 'Делайла' ? 'active' : ""}
-                                    value="Делайла"
                                     onClick={() => {
                                         setUser("Делайла");
                                         setOnSelect(false);
                                     }}
                                 >
                                     Делайла
-                                </option>
-                                <option
+                                </span>
+                                <span
                                     className={user === 'Матвей' ? 'active' : ""}
-                                    value="Матвей"
                                     onClick={() => {
                                         setUser("Матвей");
                                         setOnSelect(false);
                                     }}
                                 >
                                     Матвей
-                                </option>
+                                </span>
                             </div>
                         </div>
                         :
@@ -69,16 +66,6 @@ export default function AppHeader({ user, sort, setSort, setUser }) {
 
                     }
                 </div>
-                {/* <select
-                    id="owner"
-                    value={user}
-                    onChange={(e) => setUser(e.target.value)}
-                    className="user-input"
-                >
-                    <option value="Для всех">Для всех</option>
-                    <option value="Делайла">Делайла</option>
-                    <option value="Матвей">Матвей</option>
-                </select> */}
             </div>
             <div className="header-btns">
                 <div className={sort === 'type' ? 'btn type active' : 'btn type'} onClick={() => setSort('type')}>

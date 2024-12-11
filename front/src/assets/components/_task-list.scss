@@ -42,11 +42,17 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-
+    
     .btns{
-        display: flex;
-        gap: 5px;
-        font-size: 1.4rem;
+      display: flex;
+      gap: 5px;
+      font-size: 1.6rem;
     }
+    // .delite-contirm{
+    //   width: 0px;
+    //   span{
+    //     width: 0px;
+    //   }
+    // }
   }
 }

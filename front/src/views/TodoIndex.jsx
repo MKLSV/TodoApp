@@ -24,7 +24,7 @@ export default function TodoIndex() {
     }, [])
 
     const filteredByUserTodos = todos.filter((todo) => {
-        return user === 'Для всех' || todo.owner === user;
+        return  todo.owner === user;
     });
 
     const filteredTodos = filteredByUserTodos.filter((todo) => {

@@ -43,6 +43,9 @@ export function TodoItem({ todo, onRemoveTodo, onUpdateTodo }) {
                   }}
                 />
               </div>
+              {/* <div className="delite-contirm">
+                <span>удалить</span>
+              </div> */}
             </div>
           </div>
         )}

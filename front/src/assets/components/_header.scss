@@ -46,9 +46,11 @@
         gap: 10px;
         z-index: 90;
         box-shadow: 0 0 10px 0 black;
-        width: 100%;
-        option{
+        width: 32vw;
+        span{
           padding: 10px 5px;
+          color: #141414;
+          font-size: 1.3rem;
         }
         .active{
           font-weight: 700;
