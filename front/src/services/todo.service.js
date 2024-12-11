@@ -36,6 +36,7 @@ async function updatedTodo(updatedTask) {
 }
 
 async function remove(id) {
+    console.log(`${API_URL}/${id}`)
     try {
         await axios.delete(`${API_URL}/${id}`);
         return { message: "Task deleted" };
