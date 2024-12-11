@@ -92,7 +92,6 @@ app.delete('/tasks/:id', async (req, res) => {
   try {
 
     const { id } = req.params;
-    console.log(id)
     // Используем корректное создание ObjectId
     const objectId = new mongoose.Types.ObjectId(id);
 
