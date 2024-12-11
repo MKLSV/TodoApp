@@ -1,6 +1,6 @@
 import { TodoItem } from "./TodoItem";
 
-export function ListByDate({ todos, onRemoveTodo, onUpdateTodo }) {
+export function ListByDate({ todos, onRemoveTodo, onUpdateTodo, setShowConfetti }) {
     // Группируем задачи по `dueDate`
     const groupedTodos = todos.reduce((acc, todo) => {
         const dueDate = todo.dueDate ? new Date(todo.dueDate).toISOString().split("T")[0] : "Без даты";
@@ -57,7 +57,7 @@ export function ListByDate({ todos, onRemoveTodo, onUpdateTodo }) {
                     </span>
                     {todos.map((todo) => (
                         <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
-                            <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} />
+                            <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} setShowConfetti={setShowConfetti} />
                         </div>
                     ))}
                 </div>

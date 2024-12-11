@@ -7,7 +7,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import EditTask from "./EditTask";
 import TaskModal from "./TaskModal";
 
-export function TodoItem({ todo, onRemoveTodo, onUpdateTodo }) {
+export function TodoItem({ todo, onRemoveTodo, onUpdateTodo, setShowConfetti }) {
   const [isEditing, setIsEditing] = useState(false)
   const [onDelete, setOnDelete] = useState(false)
   const [onModal, setOnModal] = useState(false)
@@ -18,6 +18,7 @@ export function TodoItem({ todo, onRemoveTodo, onUpdateTodo }) {
   };
   function handleChecked() {
     saveTodo({ ...todo, isCompleted: !todo.isCompleted })
+    setShowConfetti(true)
   };
 
 

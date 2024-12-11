@@ -1,6 +1,6 @@
 import { TodoItem } from "./TodoItem"
 
-export function ListDone({ todos, onRemoveTodo, onUpdateTodo }) {
+export function ListDone({ todos, onRemoveTodo, onUpdateTodo,  setShowConfetti }) {
 
     const doneTodos = todos.filter(todo => (
         todo.isCompleted === true
@@ -23,7 +23,7 @@ export function ListDone({ todos, onRemoveTodo, onUpdateTodo }) {
                 <span className="title">Задачи</span>
                 {todoList.map(todo => (
                     <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
-                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} />
+                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo}  setShowConfetti={setShowConfetti}/>
                     </div>
                 ))}
             </div>
@@ -34,7 +34,7 @@ export function ListDone({ todos, onRemoveTodo, onUpdateTodo }) {
                 <span className="title">Регулярные платежи</span>
                 {expensesList.map(todo => (
                     <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
-                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} />
+                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo}  setShowConfetti={setShowConfetti}/>
                     </div>
                 ))}
             </div>
@@ -44,7 +44,7 @@ export function ListDone({ todos, onRemoveTodo, onUpdateTodo }) {
                 <span className="title">Покупки</span>
                 {shoppingList.map(todo => (
                     <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
-                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} />
+                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo}  setShowConfetti={setShowConfetti}/>
                     </div>
                 ))}
             </div>

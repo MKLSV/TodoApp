@@ -1,9 +1,13 @@
 
 export default function TaskModal({ setOnModal, todo, handleChecked }) {
 
+
     return (
         <div className="task-modal" onClick={() => setOnModal(false)}>
-            <form className="add-task-form" onClick={(e) => e.stopPropagation()} onSubmit={handleChecked}>
+            <form className="add-task-form" onClick={(e) => e.stopPropagation()} onSubmit={(e) => {
+                e.preventDefault(); // Предотвращает обновление страницы
+                handleChecked(); // Ваша логика обработки данных
+            }}>
                 <h2 className="add-task-title">{todo.title}</h2>
 
                 <div className="form-group">

@@ -9,6 +9,7 @@ import { ListByTypes } from '../components/ListByTypes.jsx';
 import { IoAddOutline } from "react-icons/io5";
 import { ListDone } from '../components/ListDone.jsx';
 import AppHeader from '../components/AppHeader.jsx';
+import ConfettiEffect from '../components/ConfettiEffect.jsx';
 
 export default function TodoIndex() {
 
@@ -18,13 +19,15 @@ export default function TodoIndex() {
     const [msg, setMsg] = useState('')
     const [onModal, setOnModal] = useState(false)
     const [sort, setSort] = useState('type')
+    const [showConfetti, setShowConfetti] = useState(false);
+
 
     useEffect(() => {
         loadTodos()
     }, [])
 
     const filteredByUserTodos = todos.filter((todo) => {
-        return  todo.owner === user;
+        return todo.owner === user;
     });
 
     const filteredTodos = filteredByUserTodos.filter((todo) => {
@@ -56,13 +59,14 @@ export default function TodoIndex() {
             <div className='add-btn' onClick={() => setOnModal(true)}>
                 <IoAddOutline />
             </div>
+            {showConfetti && <ConfettiEffect setShowConfetti={setShowConfetti} />}
             {onModal ? <AddTask setOnModal={setOnModal} /> : ''}
             {sort === 'data' ?
-                <ListByDate todos={filteredTodos} onRemoveTodo={handleRemoveTodo} onUpdateTodo={handleUpdateTodo} />
+                <ListByDate todos={filteredTodos} onRemoveTodo={handleRemoveTodo} onUpdateTodo={handleUpdateTodo}  setShowConfetti={setShowConfetti}/>
                 : sort === 'type' ?
-                    <ListByTypes todos={filteredTodos} onRemoveTodo={handleRemoveTodo} onUpdateTodo={handleUpdateTodo} />
+                    <ListByTypes todos={filteredTodos} onRemoveTodo={handleRemoveTodo} onUpdateTodo={handleUpdateTodo} setShowConfetti={setShowConfetti} />
                     :
-                    <ListDone todos={filteredByUserTodos} onRemoveTodo={handleRemoveTodo} />
+                    <ListDone todos={filteredByUserTodos} onRemoveTodo={handleRemoveTodo} setShowConfetti={setShowConfetti} />
             }
 
         </div>
