@@ -4,8 +4,8 @@ import axios from "axios";
 
 
 const API_URL = process.env.NODE_ENV === 'production'
-    ? '/tasks/'
-    : '//localhost:5000/tasks/'
+    ? '/tasks'
+    : '//localhost:5000/tasks'
 
 export const todoService = {
     query,
