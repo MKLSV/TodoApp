@@ -26,8 +26,9 @@ async function query() {
 
 
 async function updatedTodo(updatedTask) {
+    const url = `${API_URL}/${updatedTask._id}`
     try {
-        const response = await axios.put(`${API_URL}/${updatedTask._id}`, updatedTask);
+        const response = await axios.put(url, updatedTask);
         return response.data;
     } catch (error) {
         console.error("Ошибка при обновлении задачи:", error);
@@ -36,9 +37,9 @@ async function updatedTodo(updatedTask) {
 }
 
 async function remove(id) {
-    console.log(`${API_URL}/${id}`)
+    const url = `${API_URL}/${id}`
     try {
-        await axios.delete(`${API_URL}/${id}`);
+        await axios.delete(url);
         return { message: "Task deleted" };
     } catch (error) {
         console.error("Ошибка при удалении задачи:", error);
